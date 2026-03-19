@@ -1,0 +1,565 @@
+/* ══════════════════════════════════════════════
+   ANITRACK — Estilos
+   Estética: dark, anime, neón violeta/cyan
+══════════════════════════════════════════════ */
+
+/* ── VARIABLES ── */
+:root {
+  --bg: #0d0d14;
+  --bg-panel: #13131f;
+  --bg-card: #1a1a2e;
+  --border: #2a2a45;
+  --accent: #9b5de5;
+  --accent-2: #00f5d4;
+  --accent-3: #f15bb5;
+  --text: #e8e8f0;
+  --text-muted: #6b6b8a;
+  --success: #00f5d4;
+  --error: #f15bb5;
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+.btn-delete-small {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(241, 91, 181, 0.1);
+    color: var(--accent-3);
+    border: 1px solid var(--accent-3);
+    cursor: pointer;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-delete-small:hover {
+    background: var(--accent-3);
+    color: var(--bg);
+    box-shadow: 0 0 10px var(--accent-3);
+}
+
+
+/* ── RESET ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  border-bottom: 1px solid var(--border);
+  background: rgba(13, 13, 20, 0.85);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+
+.logo-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.nav-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.hero-sub {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* Decoración hero */
+.hero-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.15;
+}
+
+.deco-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--accent);
+  top: -100px;
+  right: -50px;
+}
+
+.deco-2 {
+  width: 250px;
+  height: 250px;
+  background: var(--accent-2);
+  bottom: -50px;
+  right: 200px;
+}
+
+.deco-3 {
+  width: 200px;
+  height: 200px;
+  background: var(--accent-3);
+  top: 50px;
+  right: 300px;
+}
+
+/* ── LAYOUT ── */
+.layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── PANELS ── */
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+.panel-title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* ── FORMULARIO ── */
+.field {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+input,
+select {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.65rem 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--accent);
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+select option {
+  background: var(--bg-card);
+}
+
+/* ── MENSAJE ── */
+.mensaje {
+  font-size: 0.85rem;
+  font-weight: 500;
+  min-height: 1.2rem;
+  margin-bottom: 1rem;
+  transition: color 0.2s;
+}
+
+.mensaje.error {
+  color: var(--error);
+}
+
+.mensaje.exito {
+  color: var(--success);
+}
+
+/* ── BOTÓN ── */
+.btn-primary {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* ── BOTÓN ELIMINAR ── */
+.btn-danger {
+  background: transparent;
+  color: var(--error);
+  border: 1px solid var(--error);
+  border-radius: var(--radius-sm);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.85rem;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+.btn-danger:hover {
+  background: var(--error);
+  color: #0d0d14;
+}
+
+.btn-danger:active {
+  transform: scale(0.97);
+}
+
+/* ── LIST HEADER ── */
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.list-header .panel-title {
+  margin-bottom: 0;
+}
+
+.stats-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.stat-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.stat-pill--accent {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── ESTADO VACÍO ── */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.empty-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  opacity: 0.4;
+}
+
+.empty-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* ── GRID DE TARJETAS ── */
+.anime-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-height: 680px;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--bg-card);
+}
+
+.anime-grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.anime-grid::-webkit-scrollbar-track {
+  background: var(--bg-card);
+  border-radius: 999px;
+}
+
+.anime-grid::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+/* ── TARJETA ANIME ── */
+.anime-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 220px;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid var(--border);
+  cursor: default;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  animation: fadeIn 0.35s ease;
+  flex-shrink: 0;
+}
+
+.anime-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 40px rgba(155, 93, 229, 0.35);
+  border-color: var(--accent);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Imagen de fondo de la tarjeta */
+.card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+.anime-card:hover .card-img {
+  transform: scale(1.06);
+}
+
+/* Overlay degradado de abajo hacia arriba */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(10, 10, 20, 0.95) 0%,
+      rgba(10, 10, 20, 0.55) 55%,
+      rgba(10, 10, 20, 0.1) 100%);
+  transition: background 0.25s ease;
+}
+
+.anime-card:hover .card-overlay {
+  background: linear-gradient(to top,
+      rgba(10, 10, 20, 0.98) 0%,
+      rgba(10, 10, 20, 0.6) 55%,
+      rgba(10, 10, 20, 0.15) 100%);
+}
+
+/* Contenido sobre el overlay */
+.card-body {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-titulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.01em;
+}
+
+.card-meta {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 0.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.card-score {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent);
+  white-space: nowrap;
+  text-shadow: 0 0 16px rgba(155, 93, 229, 0.7);
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.card-score span {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+  text-shadow: none;
+}
+
+/* Badge de género en la esquina superior */
+.card-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 3;
+  background: rgba(155, 93, 229, 0.25);
+  border: 1px solid rgba(155, 93, 229, 0.5);
+  backdrop-filter: blur(8px);
+  color: #d4b3ff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+}

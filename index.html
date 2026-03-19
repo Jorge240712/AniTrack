@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AniTrack v2.0 — Mi Lista</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-icon">⊿</span>
+        <span class="logo-text">AniTrack <small style="font-size: 0.6rem; color: var(--accent);">v2.0</small></span>
+      </div>
+      <div class="nav-tag">M3L1 · Sprint 2</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Tu lista personal</p>
+      <h1 class="hero-title">Registra tu <span class="accent">anime</span><br />y lleva el control.</h1>
+      <p class="hero-sub">Agrega títulos, puntúalos y mira cómo crece tu colección.</p>
+    </div>
+    <div class="hero-deco" aria-hidden="true">
+      <div class="deco-circle deco-1"></div>
+      <div class="deco-circle deco-2"></div>
+      <div class="deco-circle deco-3"></div>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <section class="panel panel--form">
+      <h2 class="panel-title">Agregar título</h2>
+
+      <form id="formAnime" novalidate>
+        <div class="field">
+          <label for="titulo">Título del anime</label>
+          <input type="text" id="titulo" placeholder="ej. Fullmetal Alchemist" autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <label for="genero">Género</label>
+          <select id="genero">
+            <option value="">— Selecciona un género —</option>
+            <option value="Acción">Acción</option>
+            <option value="Aventura">Aventura</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasía">Fantasía</option>
+            <option value="Misterio">Misterio</option>
+            <option value="Romance">Romance</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Slice of Life">Slice of Life</option>
+          </select>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="episodios">Episodios vistos</label>
+            <input type="number" id="episodios" placeholder="ej. 24" min="1" />
+          </div>
+          <div class="field">
+            <label for="puntuacion">Puntuación (1–10)</label>
+            <input type="number" id="puntuacion" placeholder="ej. 9" min="1" max="10" />
+          </div>
+        </div>
+
+        <p id="mensajeForm" class="mensaje" aria-live="polite"></p>
+
+        <button type="submit" class="btn-primary">
+          <span>+ Agregar a mi lista</span>
+        </button>
+      </form>
+    </section>
+
+    <section class="panel panel--list">
+      <div class="list-header" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="panel-title" style="margin:0;">Mi lista</h2>
+            
+            <select id="filtroGenero" class="stat-pill" style="cursor: pointer; background: var(--bg-card); border: 1px solid var(--border); color: var(--text);">
+              <option value="Todos">Todos los géneros</option>
+              <option value="Acción">Acción</option>
+              <option value="Aventura">Aventura</option>
+              <option value="Comedia">Comedia</option>
+              <option value="Drama">Drama</option>
+              <option value="Fantasía">Fantasía</option>
+              <option value="Misterio">Misterio</option>
+              <option value="Romance">Romance</option>
+              <option value="Sci-Fi">Sci-Fi</option>
+              <option value="Slice of Life">Slice of Life</option>
+            </select>
+        </div>
+
+        <div class="stats-row" style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="stat-pill" id="statTotal">0 títulos</span>
+          <span class="stat-pill stat-pill--accent" id="statEpisodios">0 eps totales</span>
+          <span class="stat-pill stat-pill--accent" id="statPromedio" style="display:none"></span>
+        </div>
+      </div>
+
+      <div id="estadoVacio" class="empty-state">
+        <p class="empty-icon">( ˘ ³˘)♥</p>
+        <p class="empty-text">Tu lista está vacía.<br />Agrega tu primer anime para empezar.</p>
+      </div>
+
+      <div id="listaAnimes" class="anime-grid"></div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>AniTrack &mdash; v2.0 · JavaScript Bootcamp · 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
