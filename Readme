@@ -1,0 +1,37 @@
+⊿ AniTrack — v2.0 🎌
+Tu gestor personal de anime con estética Cyberpunk.
+Registra, puntúa y filtra tu colección de forma dinámica.
+
+✨ ¿Qué hace esta versión (v2.0)?
+En esta actualización, la app dejó de ser una lista estática para convertirse en una herramienta interactiva:
+
+Registro Dinámico: Agrega títulos con género, episodios y puntuación.
+
+Filtros Inteligentes: Clasifica tu lista por género (Acción, Romance, Sci-Fi, etc.) sin perder tus datos.
+
+Control Total: Botón de eliminación individual en cada tarjeta para gestionar tu colección.
+
+Estadísticas en Tiempo Real: Calcula automáticamente el total de títulos, la suma de episodios vistos y el promedio de calificación.
+
+🚀 Tecnologías usadas
+HTML5: Estructura semántica.
+
+CSS3: Diseño Dark Mode con variables, Flexbox, Grid y animaciones neón.
+
+JavaScript (ES6+): * Uso de filter() para los buscadores y eliminación.
+
+Uso de reduce() para cálculos matemáticos.
+
+Manipulación dinámica del DOM.
+
+🛠️ Instalación
+Clona este repositorio o descarga los archivos.
+
+Abre el archivo index.html en tu navegador favorito.
+
+¡Empieza a trackear tu lista!
+
+👤 Autor
+Jorge — Estudiante de Programación (M3L1 Bootcamp 2026)
+
+Enfocado en desarrollo Web Estético y Game Dev.
